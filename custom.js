@@ -1,0 +1,579 @@
+/*
+
+NOTE:  
+
+*/
+
+
+
+/*================================================
+[  Table of contents  ]
+================================================
+
+:: Predefined Variables
+:: Preloader
+:: Mega menu
+:: Search Bar
+:: Owl carousel
+:: Counter
+:: Slider range
+:: Countdown
+:: Tabs
+:: Accordion
+:: List group item
+:: Slick slider 
+:: Mgnific Popup
+:: PHP contact form 
+:: Placeholder
+:: Isotope
+:: Scroll to Top
+:: POTENZA Window load and functions
+
+======================================
+[ End table content ]
+======================================*/
+ 
+//POTENZA var
+var POTENZA = {};
+ 
+ (function($){
+  "use strict";
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+/*************************
+      Predefined Variables
+*************************/ 
+var $window = $(window),
+	$document = $(document),
+	$body = $('body'),
+	$countdownTimer = $('.countdown'),
+	$counter = $('.counter-main');
+
+//Check if function exists
+$.fn.exists = function () {
+	return this.length > 0;
+};
+
+
+/*************************
+      Predefined Variables
+*************************/ 
+   var $window = $(window),
+        $document = $(document),
+        $body = $('body'),
+        $countdownTimer = $('.countdown'),
+        $bar = $('.bar'),
+		$progressBar = $('.progress-bar'),
+        $counter = $('.counter');
+
+    //Check if function exists
+     $.fn.exists = function () {
+        return this.length > 0;
+    };
+	
+
+ /*************************
+        Preloader
+*************************/  
+  POTENZA.preloader = function () {
+       $("#load").fadeOut();
+       $('#preloader').delay(0).fadeOut('slow');
+   };
+	
+
+/*************************
+       Mega menu
+*************************/    
+ POTENZA.megaMenu = function () {   
+      $('#menu').megaMenu({
+               // DESKTOP MODE SETTINGS
+              logo_align          : 'left',         // align the logo left or right. options (left) or (right)
+              links_align         : 'left',        // align the links left or right. options (left) or (right)
+              socialBar_align     : 'left',    // align the socialBar left or right. options (left) or (right)
+              searchBar_align     : 'right',   // align the search bar left or right. options (left) or (right)
+              trigger             : 'hover',           // show drop down using click or hover. options (hover) or (click)
+              effect              : 'fade',             // drop down effects. options (fade), (scale), (expand-top), (expand-bottom), (expand-left), (expand-right)
+              effect_speed        : 400,          // drop down show speed in milliseconds
+              sibling             : true,              // hide the others showing drop downs if this option true. this option works on if the trigger option is "click". options (true) or (false)
+              outside_click_close : true,  // hide the showing drop downs when user click outside the menu. this option works if the trigger option is "click". options (true) or (false)
+              top_fixed           : false,           // fixed the menu top of the screen. options (true) or (false)
+              sticky_header       : true,       // menu fixed on top when scroll down down. options (true) or (false)
+              sticky_header_height: 250,  // sticky header height top of the screen. activate sticky header when meet the height. option change the height in px value.
+              menu_position       : 'horizontal',    // change the menu position. options (horizontal), (vertical-left) or (vertical-right)
+              full_width          : false,           // make menu full width. options (true) or (false)
+             // MOBILE MODE SETTINGS
+              mobile_settings     : {
+                collapse            : true,    // collapse the menu on click. options (true) or (false)
+                sibling             : true,      // hide the others showing drop downs when click on current drop down. options (true) or (false)
+                scrollBar           : true,    // enable the scroll bar. options (true) or (false)
+                scrollBar_height    : 400,  // scroll bar height in px value. this option works if the scrollBar option true.
+                top_fixed           : false,       // fixed menu top of the screen. options (true) or (false)
+                sticky_header       : false,   // menu fixed on top when scroll down down. options (true) or (false)
+                sticky_header_height: 200   // sticky header height top of the screen. activate sticky header when meet the height. option change the height in px value.
+             }
+      });
+  }
+ 
+
+ /*************************
+       counter
+*************************/  
+
+  POTENZA.counters = function () {
+          if ($counter.exists()) {
+              $counter.each(function () {
+                  var $elem = $(this);                 
+                      $elem.appear(function () {
+                          $elem.find('.timer').countTo();
+                      });                  
+              });
+          }
+  };
+
+
+/*************************
+      Accordion
+*************************/
+  POTENZA.accordion = function () {
+     var   $acpanel = $(".accordion .acd-group > .acd-des"),
+           $acsnav = $(".accordion .acd-group > .acd-heading");      
+         
+          $acpanel.hide().first().slideDown("easeOutExpo");
+          $acsnav.first().addClass("acd-active");
+          $acsnav.on('click', function () {
+              var $this = $(this).next(".acd-des");
+              $acsnav.parent().removeClass("acd-active");
+              $(this).parent().addClass("acd-active");
+              $acpanel.not($this).slideUp("easeInExpo");
+              $(this).next().slideDown("easeOutExpo");
+              return false;
+        });
+  }
+
+  /*************************
+       owl-carousel 
+*************************/
+
+ POTENZA.carousel = function () {
+    $(".owl-carousel").each(function () {
+        var $this = $(this),
+            $items = ($this.data('items')) ? $this.data('items') : 1,
+            $loop = ($this.data('loop')) ? $this.data('loop') : true,
+            $navdots = ($this.data('nav-dots')) ? $this.data('nav-dots') : false,
+            $navarrow = ($this.data('nav-arrow')) ? $this.data('nav-arrow') : false,
+            $autoplay = ($this.attr('data-autoplay')) ? $this.data('autoplay') : true,
+            $space = ($this.attr('data-space')) ? $this.data('space') : 30;     
+            $(this).owlCarousel({
+                loop: $loop,
+                items: $items,
+                responsive: {
+                  0:{items: $this.data('xx-items') ? $this.data('xx-items') : 1},
+                  480:{items: $this.data('xs-items') ? $this.data('xs-items') : 1},
+                  768:{items: $this.data('sm-items') ? $this.data('sm-items') : 2},
+                  980:{items: $this.data('md-items') ? $this.data('md-items') : 3},
+                  1200:{items: $items}
+                },
+                dots: $navdots,
+                margin:$space,
+                nav: $navarrow,
+                navText:["<i class='fa fa-angle-left fa-2x'></i>","<i class='fa fa-angle-right fa-2x'></i>"],
+                autoplay: $autoplay,
+                autoplayHoverPause: true   
+            }); 
+           
+    }); 
+}
+
+/*************************
+         Countdown
+*************************/
+  POTENZA.countdownTimer = function () {
+      if ($countdownTimer.exists()) {
+            $countdownTimer.downCount({
+                date: '10/05/2019 12:00:00',
+                offset: 400
+            });
+      }
+  };
+
+/*************************
+       Magnific Popup
+*************************/ 
+  POTENZA.mediaPopups = function () {
+    if ($(".popup-gallery").exists()) {
+          $('.popup-gallery').magnificPopup({
+              delegate: 'a.popup-img',
+              type: 'image',
+              tLoading: 'Loading image #%curr%...',
+              mainClass: 'mfp-img-mobile',
+              gallery: {
+                  enabled: true,
+                  navigateByImgClick: true,
+                  preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+              },
+              image: {
+                  tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                  titleSrc: function(item) {
+                      return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+                  }
+             }
+         }); 
+      }
+      if ($(".popup-youtube, .popup-vimeo, .popup-gmaps").exists()) {
+           $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+                disableOn: 700,
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+                fixedContentPos: false
+          });
+      }
+  }
+
+
+/*************************
+         Isotope
+*************************/
+POTENZA.Isotope = function () {
+      var $isotope = $(".isotope"),
+          $itemElement = '.grid-item',
+          $filters = $('.isotope-filters');      
+        if ($isotope.exists()) {
+            $isotope.isotope({
+            resizable: true,
+            itemSelector: $itemElement,
+              masonry: {
+                gutterWidth: 10
+              }
+            });     
+       $filters.on( 'click', 'button', function() {
+         var $val = $(this).attr('data-filter');
+             $isotope.isotope({ filter: $val });       
+             $filters.find('.active').removeClass('active');
+             $(this).addClass('active');
+      });     
+    }
+}
+
+ // masonry
+POTENZA.masonry = function () {
+	  var $masonry = $('.masonry-main .masonry'),
+		  $itemElement = '.masonry-main .masonry-item'; 
+		  if ($masonry.exists()) {
+			$masonry.isotope({
+			  resizable: true,
+			  itemSelector: $itemElement,
+			  masonry: {
+				gutterWidth: 10
+			  }
+			});
+	   }  
+}
+
+/*************************
+       Progressbar
+*************************/  
+    POTENZA.progressBar = function () {
+
+        if ($progressBar.exists()) {
+            $progressBar.each(function (i, elem) {
+                var $elem = $(this),
+                    percent = $elem.attr('data-percent') || "100",
+                    delay = $elem.attr('data-delay') || "100",
+                    type = $elem.attr('data-type') || "%";
+
+                if (!$elem.hasClass('progress-animated')) {
+                    $elem.css({
+                        'width': '0%'
+                    });
+                }
+
+                var progressBarRun = function () {
+                    $elem.animate({
+                        'width': percent + '%'
+                    }, 'easeInOutCirc').addClass('progress-animated');
+
+                    $elem.delay(delay).append('<span class="progress-type animated fadeIn">' + type + '</span><span class="progress-number animated fadeIn">' + percent + '</span>');
+                };
+
+                    $(elem).appear(function () {
+                        setTimeout(function () {
+                            progressBarRun();
+                        }, delay);
+                    });
+            });
+        }
+    };
+ 
+
+/*************************
+     parallax
+*************************/
+POTENZA.Parallax = function () {
+	var $parallaxdiv = $('.parallax'),
+		 parallax = document.querySelectorAll(".parallax"),speed = 0.5;
+		if ($parallaxdiv.exists()) {
+                window.onscroll = function(){
+                [].slice.call(parallax).forEach(function(el,i){
+                var windowYOffset = window.pageYOffset,
+                    elBackgrounPos = "0 " + (windowYOffset * speed) + "px";
+                    el.style.backgroundPosition = elBackgrounPos;
+
+                });
+                };
+	}
+}
+
+/*************************
+  Php Contact Form 
+*************************/
+POTENZA.Contactform = function () {
+  $( "#contactform").submit(function( event ) {
+    $("#ajaxloader").show();
+    $("#contactform").hide();
+    $.ajax({
+      url:'php/contact-form.php',
+      data:$(this).serialize(),
+      type:'post',
+      success:function(response){
+        $("#ajaxloader").hide();
+        $("#contactform").show();
+        $("#contactform").find("input, textarea").val("");
+        $("#formmessage").html(response).show().delay(2000).fadeOut('slow');
+      }
+    });
+    event.preventDefault();
+  });
+}
+
+/*************************
+         Countdown
+*************************/
+POTENZA.countdownTimer = function () {
+      if ($countdownTimer.exists()) {
+            $countdownTimer.downCount({
+                date: '10/05/2019 12:00:00',
+                offset: 400
+            });
+      }
+  };
+
+
+/*************************
+     Back to top
+*************************/
+ POTENZA.goToTop = function () {
+  var $goToTop = $('#back-to-top');
+      $goToTop.hide();
+    	$window.scroll(function(){
+  		  if ($window.scrollTop()>100) $goToTop.fadeIn();
+  		  else $goToTop.fadeOut();
+  	  });
+  	$goToTop.on("click", function () {
+  		$('body,html').animate({scrollTop:0},1000);
+  		return false;
+    });
+  }
+
+
+
+/****************************************************
+     POTENZA Window load and functions
+****************************************************/
+
+  //Window load functions
+    $window.load(function () {
+          POTENZA.preloader(),
+          POTENZA.Isotope(),
+		  POTENZA.masonry(),
+		  POTENZA.progressBar();
+    });
+
+ //Document ready functions
+    $document.ready(function () {
+        POTENZA.megaMenu(),
+        POTENZA.counters(),
+        POTENZA.accordion(),
+        POTENZA.carousel(),
+		POTENZA.Parallax(),
+		POTENZA.Contactform(),
+		POTENZA.countdownTimer(),
+		POTENZA.goToTop(),
+        POTENZA.mediaPopups(),
+        POTENZA.countdownTimer();
+    });
+
+
+})(jQuery);
+
+$(document).on('click','a.frame-close', function(e){
+  $('.header-preview').slideUp(); 
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------
+Testmonials carousel 2
+-----------------------*/
+  $('.team-carousel').owlCarousel({
+    loop: true,
+    nav: false,    
+    responsiveClass: true,
+    startPosition: 0,
+    smartSpeed: 850,
+    center: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+        margin: 15,
+        dots: false,
+      },
+      900: {
+        items:3,
+        margin: 20,
+        dots: false,
+      },
+      1000: {
+        items: 3,
+        margin: 30,
+        dots: false,
+      }
+    }
+  });
+
+
+   /* ==========================================================================
+                      Sponsors Item Carousel
+    ========================================================================== */
+
+    if ($('.sponsors-carousel').length) {
+        $('.sponsors-carousel').owlCarousel({
+            loop: true,
+            margin: 30,
+            nav: true,
+            smartSpeed: 500,
+            autoplay: 4000,
+            navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 2
+                },
+                600: {
+                    items: 3
+                },
+                800: {
+                    items: 4
+                },
+                1024: {
+                    items: 5
+                }
+            }
+        });
+    }
+
+       /* -----------------------------------------------
+                Site Preloader
+     ----------------------------------------------- */
+   
+
+    /*Smooth Scroll*/
+    $(document).on('click', 'a[href^="#"]', function (event) {
+        event.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+     
+    });
+
+      /* ==========================================================================
+                         Elements Animation
+    ========================================================================== */
+
+    if ($('.wow').length) {
+        var wow = new WOW({
+            boxClass: 'wow', // animated element css class (default is wow)
+            animateClass: 'animated', // animation css class (default is animated)
+            offset: 0, // distance to the element when triggering the animation (default is 0)
+            mobile: true, // trigger animations on mobile devices (default is true)
+            live: true // act on asynchronously loaded content (default is true)
+        });
+        wow.init();
+    }
+
+    /* -----------------------------------------------
+                      LightBox / Fancybox
+       ----------------------------------------------- */
+
+    /*MAGNIFIC POPUP JS*/
+
+    $('.video-play').magnificPopup({
+        type: 'iframe'
+    });
+    var magnifPopup = function() {
+        $('.work-popup').magnificPopup({
+            type: 'image',
+            removalDelay: 300,
+            mainClass: 'mfp-with-zoom',
+            gallery: {
+                enabled: true
+            },
+            zoom: {
+                enabled: true, // By default it's false, so don't forget to enable it
+
+                duration: 300, // duration of the effect, in milliseconds
+                easing: 'ease-in-out', // CSS transition easing function
+
+                // The "opener" function should return the element from which popup will be zoomed in
+                // and to which popup will be scaled down
+                // By defailt it looks for an image tag:
+                opener: function(openerElement) {
+                    // openerElement is the element on which popup was initialized, in this case its <a> tag
+                    // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+                    return openerElement.is('img') ? openerElement : openerElement.find('img');
+                }
+            }
+        });
+    };
+
+    // 3 LightBox / Fancybox
+    if ($('.lightbox-image').length) {
+        $('.lightbox-image').fancybox({
+            openEffect: 'elastic',
+            closeEffect: 'elastic',
+            helpers: {
+                media: {}
+            }
+        });
+    }
+	
+	
+	
+	
+	  
+
+
+ 
+
