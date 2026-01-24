@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D32C422E-1FD8-4174-8FF5-849FD6E520AC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZAInteriors_github</RootNamespace>
+    <AssemblyName>ZAInteriors_github</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="background-5.jpg" />
+    <Content Include="background-7.jpg" />
+    <Content Include="close.html" />
+    <Content Include="contact.jpg" />
+    <Content Include="curv1.png" />
+    <Content Include="curv2.png" />
+    <Content Include="download.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fontawesome-webfont5b625b62.svg" />
+    <Content Include="glyphicons-halflings-regular.svg" />
+    <Content Include="hd-2.jpg" />
+    <Content Include="hd-2.mp4" />
+    <Content Include="jqbar.js" />
+    <Content Include="jquery.themepunch.revolution.min.js" />
+    <Content Include="loading.gif" />
+    <Content Include="looking-bg.jpg" />
+    <Content Include="packages.config" />
+    <Content Include="fontawesome-webfont5b625b62.eot" />
+    <Content Include="fontawesome-webfont5b625b62.ttf" />
+    <Content Include="fontawesome-webfont5b625b62.woff" />
+    <Content Include="fontawesome-webfont5b625b62.woff2" />
+    <Content Include="fontawesome-webfontd41dd41d.eot" />
+    <Content Include="glyphicons-halflings-regular.eot" />
+    <Content Include="glyphicons-halflings-regular.ttf" />
+    <Content Include="glyphicons-halflings-regular.woff" />
+    <Content Include="glyphicons-halflings-regular.woff2" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1.gif" />
+    <Content Include="11.mp4" />
+    <Content Include="2.gif" />
+    <Content Include="22.mp4" />
+    <Content Include="2D_3D Design Layout1.png" />
+    <Content Include="2D_3D Design Layout2.png" />
+    <Content Include="2D_3D Design Layout3.png" />
+    <Content Include="3.gif" />
+    <Content Include="33.mp4" />
+    <Content Include="4.gif" />
+    <Content Include="44.mp4" />
+    <Content Include="5.gif" />
+    <Content Include="6.gif" />
+    <Content Include="7.gif" />
+    <Content Include="8.gif" />
+    <Content Include="animate.css" />
+    <Content Include="Bedroom1.png" />
+    <Content Include="Bedroom2.png" />
+    <Content Include="Bedroom3.png" />
+    <Content Include="bootstrap.min.css" />
+    <Content Include="bootstrap.min.js" />
+    <Content Include="Civil SPace Planing1.png" />
+    <Content Include="Civil SPace Planing2.png" />
+    <Content Include="Civil SPace Planing3.png" />
+    <Content Include="colorJS.js" />
+    <Content Include="custom.js" />
+    <Content Include="Dining Room1.png" />
+    <Content Include="Dining Room2.png" />
+    <Content Include="Dining Room3.png" />
+    <Content Include="Entertainment room1.png" />
+    <Content Include="Entertainment room2.png" />
+    <Content Include="Entertainment room3.png" />
+    <Content Include="favicon.jpg" />
+    <Content Include="flaticon.css" />
+    <Content Include="font-awesome.min.css" />
+    <Content Include="home_mob3.png" />
+    <Content Include="index.html" />
+    <Content Include="jquery.appear.js" />
+    <Content Include="jquery.countTo.js" />
+    <Content Include="jquery.fancybox.css" />
+    <Content Include="jquery.fancybox.js" />
+    <Content Include="jquery.magnific-popup.min.js" />
+    <Content Include="jquery.min.js" />
+    <Content Include="jquery.themepunch.tools.min.js" />
+    <Content Include="jquery.vide.js" />
+    <Content Include="logo.gif" />
+    <Content Include="magnific-popup.css" />
+    <Content Include="main_menu.css" />
+    <Content Include="main_menu.js" />
+    <Content Include="map-script.js" />
+    <Content Include="Master Bathroom1.png" />
+    <Content Include="Master Bathroom2.png" />
+    <Content Include="Master Bathroom3.png" />
+    <Content Include="Modular Kitchen1.png" />
+    <Content Include="Modular Kitchen2.png" />
+    <Content Include="Modular Kitchen3.png" />
+    <Content Include="MultipleDropDown.css" />
+    <Content Include="MultipleDropDown.js" />
+    <Content Include="Office Interior1.png" />
+    <Content Include="Office Interior2.png" />
+    <Content Include="Office Interior3.png" />
+    <Content Include="owl.carousel.css" />
+    <Content Include="owl.carousel.min.js" />
+    <Content Include="Resifential Interior1.png" />
+    <Content Include="Resifential Interior2.png" />
+    <Content Include="Resifential Interior3.png" />
+    <Content Include="Retail Shop &amp; Showroom1.png" />
+    <Content Include="Retail Shop &amp; Showroom2.png" />
+    <Content Include="Retail Shop &amp; Showroom3.png" />
+    <Content Include="revolution.extension.kenburn.min.js" />
+    <Content Include="revolution.extension.layeranimation.min.js" />
+    <Content Include="revolution.extension.navigation.min.js" />
+    <Content Include="revolution.extension.parallax.min.js" />
+    <Content Include="revolution.extension.slideanims.min.js" />
+    <Content Include="revolution.extension.video.min.js" />
+    <Content Include="settings.css" />
+    <Content Include="style.css" />
+    <Content Include="themify-icons.css" />
+    <Content Include="wd_about.mp4" />
+    <Content Include="wd_articles.mp4" />
+    <Content Include="wd_contact.mp4" />
+    <Content Include="wd_members.mp4" />
+    <Content Include="wd_pricing.mp4" />
+    <Content Include="wd_project.mp4" />
+    <Content Include="wd_services.mp4" />
+    <Content Include="wd_testinomial.mp4" />
+    <Content Include="Web.config" />
+    <Content Include="webdrop.js" />
+    <Content Include="wow.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58181</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58181/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
